@@ -1,0 +1,12 @@
+/* @author ksdme */
+.navbar {
+	border-radius: 0px !important;
+}
+
+.navbar-label {
+	padding: 8px;
+}
+
+.navbar-sub-label {
+	font-size: 12px;
+}
