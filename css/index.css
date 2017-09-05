@@ -1,0 +1,33 @@
+/* @author prashantxc */
+.navbar {
+	border-radius: 0px !important;
+}
+
+.navbar-label {
+	padding: 8px;
+}
+
+.navbar-sub-label {
+	font-size: 12px;
+}
+
+
+.cen-fix {
+	position: absolute !important;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.head-large {
+	font-size: 180px;
+	font-weight: bold;
+
+	color: #757575 !important;
+}
+
+.inp-field {
+	border:1px solid #a6a6a6;
+	border-radius: 5px;
+}
