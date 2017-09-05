@@ -1,4 +1,8 @@
 /* @author ksdme */
+body {
+	margin-top: 12vh;
+}
+
 .navbar {
 	border-radius: 0px !important;
 }
@@ -9,4 +13,49 @@
 
 .navbar-sub-label {
 	font-size: 12px;
+}
+
+.option, .btn {
+	background: rgba(43, 60, 99, 0.7) !important;
+	border-radius: 4px;
+	height: 15vh;
+	margin: 20px;
+}
+
+.option-content {
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.option:hover {
+	background: #4e342e !important;
+}
+
+.submit {
+	background: #00796b !important;
+}
+
+.skip {
+	background: #263238 !important;
+}
+
+.question {
+	font-size: 60px;
+	line-height: 80px !important;
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.question-padding {
+	padding: 20px !important;
+}
+
+.no-before:before {
+	display: none !important;
 }
