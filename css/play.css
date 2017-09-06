@@ -59,3 +59,7 @@ body {
 .no-before:before {
 	display: none !important;
 }
+
+.small-label {
+	font-size: 9px;
+}
