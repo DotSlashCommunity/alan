@@ -18,6 +18,8 @@
 				<span class="navbar-sub-label"><b>community</b></span>
 			</span>
 		</div>
+
+		<div class="right menu" id="right-menu-host"></div>
 	</div>
 
 	<!-- middle section -->
@@ -27,24 +29,97 @@
 				<center><p class="head-large">WELCOME!</p></center>
 			</div>
 			<div class="row">
-				<div class="six wide column">
-					<center><div class="ui huge action input">
-						<input type="text" value="" placeholder="Enter Your Roll">
-						<button class="ui primary right labeled icon button">
-							<i class="checkmark icon"></i>
-							Submit
-						</button>
-					</div></center>
-				</div>
+				<div class="seven wide column" id="input-rack-host"></div>
 			</div>
 		</div>
 	</div>
+
+	<!-- modal holder -->
+	<div id="modal-host"></div>
+
+	<!-- templates-->
+	<template id="sign-in-rack">
+		<h4 class="ui horizontal divider small-text">
+			SIGN IN
+		</h4>
+		<div class="ui form">
+			<div class="fields">
+				<div class="six wide field">
+					<input placeholder="Your Roll" type="text" id="roll-field">
+				</div>
+				<div class="six wide field">
+					<input placeholder="Your Phone" type="text" id="phone-field">
+				</div>
+				<div class="four wide field">
+					<div class="ui fluid primary submit button" id="sign-in-button">Sign In</div>
+				</div>
+			</div>
+		</div>
+	</template>
+
+	<template id="sign-out-rack">
+		<h4 class="ui horizontal divider small-text">
+			SIGN OUT
+		</h4>
+		<button class="fluid negative huge ui button" id="sign-out">
+			Sign Out
+		</button>
+	</template>
+
+	<template id="user-roll-view">
+		<a class="item">
+			<span>
+				<tt>
+					{{roll}}<br/>
+					<span class="small-text">
+						<center>user</center>
+					</span>
+				</tt>
+			</span>
+		</a>
+	</template>
+
+	<template id="default-roll-view">
+		<a class="item">
+			<span>
+				<tt>
+					<center>
+						<i class="icon warning circle warning"></i>
+					</center><br/>
+					<span class="small-text">
+						<center>Please Sign In</center>
+					</span>
+				</tt>
+			</span>
+		</a>
+	</template>
+
+	<template id="basic-modal">
+		<div class="ui basic modal">
+			<div class="ui icon header">
+				<i class="{{icon}} icon"></i>
+				{{title}}
+			</div>
+			<div class="content">
+				<p><center>{{message}}</center></p>
+			</div>
+			<div class="actions">
+				<div class="ui green ok inverted button">
+					<i class="checkmark icon"></i>
+					OKAY
+				</div>
+			</div>
+		</div>
+	</template>
 
 	<!-- required depencies -->
 	<script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="libs/semantic/semantic.min.css">
 	<script src="libs/semantic/semantic.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 </html>

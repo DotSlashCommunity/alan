@@ -31,3 +31,11 @@
 	border:1px solid #a6a6a6;
 	border-radius: 5px;
 }
+
+.small-text {
+	font-size: 9px !important;
+}
+
+.warning {
+	color: red;
+}
