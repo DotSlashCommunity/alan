@@ -1,7 +1,10 @@
 /*
 	@author ksdme
 	contains js utils
-*/
+	*/
+
+/* Server Uri */
+SERVER = "http://192.168.1.208:5000"
 
 var Validator = {
 
@@ -19,16 +22,19 @@ var Template = {
 
 	from: function(id) {
 		template = $("#"+id).html()
-	
+		
 		return (function(template){
+
 			return {
 				render: function(args) {
+
+					rendrd_templ = template
 					for (key in args) {
 						repl = "{{"+key+"}}"
-						template = 	template.replace(repl, args[key])
+						rendrd_templ = rendrd_templ.replace(new RegExp(repl, 'g'), args[key])
 					}
 
-					return template
+					return rendrd_templ
 				},
 
 				raw: function(){ return template }
@@ -53,19 +59,19 @@ var AlanServer = {
 							alert("Internal Error, \nPlease contact the Quiz Co-ordinator.\n\nStatus: "+textStatus+", Error: "+(errorThrown?errorThrown:"None"))
 						}
 
-					$.ajax({
-						data: data,
-						error: error,
-						method: "GET",
-						success: success,
-						dataType: "json",
-						url: url+endpoint,
-						xhrFields: {
-						    withCredentials: true
-						}
-					})
+						$.ajax({
+							data: data,
+							error: error,
+							method: "GET",
+							success: success,
+							dataType: "json",
+							url: url+endpoint,
+							xhrFields: {
+								withCredentials: true
+							}
+						})
+					}
 				}
-			}
-		})(url)
+			})(url)
+		}
 	}
-}

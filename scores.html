@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AlanX</title>
+
+	<!-- meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- internal styled -->
+	<style type="text/css">
+		.winner-1, .winner-2, .winner-3 { display: initial !important; }
+		.winner-1 { color: green;  }
+		.winner-2 { color: yellow; }
+		.winner-3 { color: blue;  }
+
+		.hidden { display: none; }
+	</style>
+
+</head>
+
+<body>
+
+	<!-- the navbar for the -->
+	<div class="ui stackable menu navbar">
+		<div class="item">
+			<img src="/assets/images/logo.png" class="ui rounded mini image" />
+			<span class="navbar-label">
+				<tt><b>DotSlash</b></tt><br/>
+				<span class="navbar-sub-label"><b>community</b></span>
+			</span>
+		</div>
+
+		<div class="right menu" id="right-menu-host"></div>
+	</div>
+
+	<div class="ui eight column centered grid" id="scores-host" style="margin-top: 10px;"></div>
+
+	<template id="score-list-view">
+		<div class="row">
+			<div class="one column wide">
+				<center>
+					<h2>
+						<tt>
+							<i class="icon trophy hidden winner-{{index}}"></i>
+							{{index}}
+						</tt>
+					</h2>
+				</center>
+			</div>
+
+			<div class="five wide column">
+				<tt><h1><tt>{{title}}</tt></h1></tt>
+			</div>
+
+			<div class="two wide column">
+				<center>
+					<div class="ui fluid button">
+						{{content}}
+					</div>
+				</center>
+			</div>
+		</div>
+	</template>
+
+	<!-- required depencies -->
+	<script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="libs/semantic/semantic.min.css">
+	<script src="libs/semantic/semantic.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/scores.js"></script>
+
+</body>
+</html>

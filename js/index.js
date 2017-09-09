@@ -11,7 +11,7 @@ modal_host = $("#modal-host")
 input_rack_host = $("#input-rack-host")
 
 /* the server */
-alan = AlanServer.from("http://192.168.1.131:5000")
+alan = AlanServer.from(SERVER)
 
 /* load sign in rack */
 var load_sign_in_rack = function() {
@@ -53,7 +53,6 @@ var sync_roll_view = function() {
 
 /* internal functions */
 var notify_error_field = function(field) {
-	console.log(field)
 	field.parent().addClass("error")
 	field.parent().transition("shake")
 }
