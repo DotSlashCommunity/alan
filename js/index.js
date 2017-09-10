@@ -87,7 +87,6 @@ $(function(){
 					/* on success */
 
 					if (response.e) {
-						console.log(response)
 						modal = false
 						if (response.m == "r")
 							notify_error_field(roll_field)
@@ -148,7 +147,28 @@ $(function(){
 		$(document.body).on('click', "#sign-out", function() {
 
 			/* send a request and quit */
-			alan.query("/logout", {}, function() {
+			alan.query("/logout", {}, function(response) {
+
+				if (response.e) {
+					if (response.m == "qe")
+						modal = {
+							"icon": "smile",
+							"title": "Quiz Ended",
+							"message": "Thank you for participating!<br/>Contact one of the co-ordinators for more!"
+						}
+
+					else if (response.m == "lf")
+						modal = {
+							"icon": "smile",
+							"title": "Logout Locked!",
+							"message": "Sorry<br/>To ensure that we face no malicious activity we temporarily locked logouts!"
+						}
+
+					if (modal !== false) {
+						modal_host.replaceWith(Template.from("basic-modal").render(modal))
+						$('.ui.basic.modal').modal('show')
+					}
+				}
 
 				/* sign out stuff */
 				load_sign_in_rack()
