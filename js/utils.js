@@ -4,12 +4,12 @@
 	*/
 
 /* Server Uri */
-SERVER = "http://192.168.1.208:5000"
+SERVER = "http://192.168.1.131:5000"
 
 var Validator = {
 
 	roll: function(roll) {
-		return roll > 100000000 && roll < 99999999999
+		return roll > 100000000 && roll <= 99999999999
 	},
 
 	phone: function(phone) {
@@ -31,7 +31,7 @@ var Template = {
 					rendrd_templ = template
 					for (key in args) {
 						repl = "{{"+key+"}}"
-						rendrd_templ = rendrd_templ.replace(new RegExp(repl, 'g'), args[key])
+						rendrd_templ = rendrd_templ.replace(repl, args[key])
 					}
 
 					return rendrd_templ
