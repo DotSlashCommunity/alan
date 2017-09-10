@@ -16,7 +16,7 @@ var update_scoreboard = function() {
 
 	alan.query("/scores", {},
 		function(scores) {
-			console.log(scores)
+			console.log(details_cache)
 			template_amal = ""
 			current_rank = 000
 			current_score = 500
@@ -34,7 +34,6 @@ var update_scoreboard = function() {
 					alan.query("/details", {},
 						function(details){
 							details_cache = details
-							update_scoreboard()
 						})
 				}
 
@@ -59,7 +58,7 @@ $(function() {
 			update_scoreboard()
 
 			/* timeout now and then */
-			setTimeout(function() {
+			setInterval(function() {
 				update_scoreboard()
 			}, 5000)
 		})
