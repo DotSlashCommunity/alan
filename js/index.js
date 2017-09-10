@@ -95,11 +95,7 @@ $(function(){
 							notify_error_field(phone_field)
 						
 						if (response.m == "qe")
-							modal = {
-								"icon": "smile",
-								"title": "Quiz Ended",
-								"message": "Thank you for participating!<br/>Contact one of the co-ordinators for more!"
-							}
+							window.location.href = 'thanks.html';
 
 						else if (response.m == "lf")
 							modal = {
@@ -151,11 +147,7 @@ $(function(){
 
 				if (response.e) {
 					if (response.m == "qe")
-						modal = {
-							"icon": "smile",
-							"title": "Quiz Ended",
-							"message": "Thank you for participating!<br/>Contact one of the co-ordinators for more!"
-						}
+						window.location.href = 'thanks.html';
 
 					else if (response.m == "lf")
 						modal = {
