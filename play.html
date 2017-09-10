@@ -23,7 +23,7 @@
 			<a class="item">
 				<span>
 					<tt>
-						925602715<br/>
+						<span id="roll"></span><br/>
 						<span class="small-label">
 							<center>USER</center>
 						</span>
@@ -33,9 +33,7 @@
 
 			<a class="item">
 				<div class="ui mini statistic">
-					<div class="value">
-						20:00
-					</div>
+					<div class="value" id="time-remaining"></div>
 					<div class="label">
 						REMAINING
 					</div>
@@ -48,70 +46,100 @@
 	<div class="ui centered grid">
 		<div class="fifteen middle aligned wide column">
 			<div class="ui pagination menu">
-				<a class="item">1</a>
-				<a class="item">2</a>
-				<a class="item active">3</a>
-				<a class="item">4</a>
-				<a class="item">5</a>
-				<a class="item">6</a>
-				<a class="item">7</a>
-				<a class="item">8</a>
-				<a class="item">9</a>
-				<a class="item">10</a>
-				<a class="item">11</a>
-				<a class="item">12</a>
-				<a class="item">13</a>
-				<a class="item">14</a>
-				<a class="item">15</a>
-				<a class="item">16</a>
-				<a class="item">17</a>
-				<a class="item">18</a>
-				<a class="item">19</a>
-				<a class="item">20</a>
+				<a class="item q-pill" id="q-p-1">1</a>
+				<a class="item q-pill" id="q-p-2">2</a>
+				<a class="item q-pill" id="q-p-3">3</a>
+				<a class="item q-pill" id="q-p-4">4</a>
+				<a class="item q-pill" id="q-p-5">5</a>
+				<a class="item q-pill" id="q-p-6">6</a>
+				<a class="item q-pill" id="q-p-7">7</a>
+				<a class="item q-pill" id="q-p-8">8</a>
+				<a class="item q-pill" id="q-p-9">9</a>
+				<a class="item q-pill" id="q-p-10">10</a>
+				<a class="item q-pill" id="q-p-11">11</a>
+				<a class="item q-pill" id="q-p-12">12</a>
+				<a class="item q-pill" id="q-p-13">13</a>
+				<a class="item q-pill" id="q-p-14">14</a>
+				<a class="item q-pill" id="q-p-15">15</a>
+				<a class="item q-pill" id="q-p-16">16</a>
+				<a class="item q-pill" id="q-p-17">17</a>
+				<a class="item q-pill" id="q-p-18">18</a>
+				<a class="item q-pill" id="q-p-19">19</a>
+				<a class="item q-pill" id="q-p-20">20</a>
 			</div>
 		</div>
 	</div>
-
 
 	<div class="ui ten column centered grid">
 		<div class="row question-padding">
-			<div class="ten wide column">
-				<span class="question">
-					Are you sure you are not gay ?
-				</span>
+			<div class="ten middle aligned wide column" style="width: 100%;">
+				<span class="question" id="q"></span>
 			</div>
 		</div>
 
-		<div class="five wide column option">
-			<span class="option-content">Alan Turing</span>
+		<div class="five wide column optn option">
+			<span class="option-content" id="opt-a"></span>
 		</div>
 
-		<div class="five wide column option">
-			<span class="option-content">Charles Babbage</span>
+		<div class="five wide column optn option">
+			<span class="option-content" id="opt-b"></span>
 		</div>
 
-		<div class="five wide column option">
-			<span class="option-content">Rohan Sharma</span>
+		<div class="five wide column optn option">
+			<span class="option-content" id="opt-c"></span>
 		</div>
 
-		<div class="five wide column option">
-			<span class="option-content">Richard Feynman</span>
+		<div class="five wide column optn option">
+			<span class="option-content" id="opt-d"></span>
 		</div>
 
-		<div class="seven wide column submit btn">
-			<span class="option-content butn">SUBMIT</span>
-		</div>
-
-		<div class="three wide column skip btn">
-			<span class="option-content butn">SKIP</span>
+		<div class="row hidden" id="already-submitted-msg">
+			<div class="five wide middle aligned column">
+				<br/><i>
+				you already submitted an answer to this question!
+			</i>
 		</div>
 	</div>
+</div>
 
-	<!-- required depencies -->
-	<script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
-	<link rel="stylesheet" href="libs/semantic/semantic.min.css">
-	<script src="libs/semantic/semantic.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/play.css" />
+<!-- modal -->
+<div id="modal-host"></div>
+
+<!-- submission message -->
+<div class="ui modal" id="sub-modal">
+	<div class="header">
+		Submission Successful!
+	</div>
+</div>
+
+<!-- basic template -->
+<template id="basic-modal">
+	<div class="ui basic modal">
+		<div class="ui icon header">
+			<i class="{{icon}} icon"></i>
+			{{title}}
+		</div>
+		<div class="content">
+			<p><center>{{message}}</center></p>
+		</div>
+		<div class="actions {{extras}}">
+			<div class="ui green ok inverted button">
+				<i class="checkmark icon"></i>
+				OKAY
+			</div>
+		</div>
+	</div>
+</template>
+
+<!-- required depencies -->
+<script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="libs/semantic/semantic.min.css">
+<script src="libs/semantic/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/play.css" />
+
+<!-- app js -->
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/play.js"></script>
 
 </body>
 </html>

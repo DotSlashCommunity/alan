@@ -15,11 +15,19 @@ body {
 	font-size: 12px;
 }
 
-.option, .btn {
+.option, .option-plain {
 	background: rgba(43, 60, 99, 0.7) !important;
 	border-radius: 4px;
 	height: 15vh;
 	margin: 20px;
+}
+
+.option {
+	cursor: pointer !important;
+}
+
+.option-plain {
+	background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .option-content {
@@ -31,18 +39,21 @@ body {
 	font-size: 18px;
 	font-weight: bold;
 	font-family: monospace;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .option:hover {
 	background: #4e342e !important;
 }
 
-.submit {
-	background: #00796b !important;
-}
-
-.skip {
-	background: #263238 !important;
+.btn:hover {
+	background: #000000 !important;
 }
 
 .question {
@@ -62,4 +73,22 @@ body {
 
 .small-label {
 	font-size: 9px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.already, .active-already {
+	background: #999999 !important;
+	color: white !important;
+}
+
+.app-active {
+	background: #8CCE8C !important;
+	color: white !important;
+}
+
+.active-already {
+	color: red !important;
 }
